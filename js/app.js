@@ -1,5 +1,5 @@
 document.getElementById('spinner').style.display = 'none';
-
+const apiId = `fee19ad4428d20136a665cbda76a0e1d`
 const searchCity = () => {
     const city = document.getElementById('search-name');
     const cityName = city.value;
@@ -7,7 +7,7 @@ const searchCity = () => {
     // Spinner-Display
     document.getElementById('spinner').style.display = 'block';
 
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=fee19ad4428d20136a665cbda76a0e1d&units=metric`
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${apiId}&units=metric`
     fetch(url)
     .then(res => res.json())
     .then(data => displayTemperature(data))
